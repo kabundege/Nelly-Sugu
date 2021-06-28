@@ -20,8 +20,8 @@ const Posts = () => {
     .then(res => res.json())
     .then(res => {
       setData(res)
-    }).catch(error => setState({ ...state,error }))
-    .finally(() => setState({ ...state,loading:false }))
+    })
+    .finally(() => setState({ loading:false }))
     return () => setData([])
   },[])
 

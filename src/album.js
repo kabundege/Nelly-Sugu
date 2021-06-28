@@ -16,11 +16,12 @@ const App = () => {
     if(query){
         setState({ loading:true })
         setResults([])
-        fetch(`https://jsonplaceholder.typicode.com/albums/${query}/photos`)
+        fetch(`https://nelly-sugu-backend.herokuapp.com/photos/${query}`)
         .then(res => res.json())
-        .then(res =>{
-            console.log(res);
-            setResults(res)
+        .then(res =>  {
+            if(res.status === 200 ){
+              setResults(res.data)
+            }
         })
         .finally(()=> setState({ loading:false }))
     }

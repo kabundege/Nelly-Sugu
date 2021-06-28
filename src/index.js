@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.scss';
-import App from './album';
+import App from './routes';
 
 ReactDOM.render(
     <App />,
