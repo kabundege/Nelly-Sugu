@@ -6,7 +6,7 @@ import { AiFillMail, AiOutlineArrowRight, AiOutlineClose } from 'react-icons/ai'
 import { ClipLoader } from 'react-spinners'
 import { satisfies } from 'semver';
 
-const App = () => {
+const Posts = () => {
   const [ state,setState ] = useState({ loading:true })
   const [ data,setData ] = useState([])
   const [ posts,setPosts ] = useState([])
@@ -122,4 +122,4 @@ const App = () => {
   );
 }
 
-export default App;
+export default Posts;

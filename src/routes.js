@@ -1,12 +1,16 @@
 import { BrowserRouter, Route,Switch } from 'react-router-dom'
-import App from './App'
+import App from './album'
+import Posts from './Posts'
 
-export default () => {
+const Routes = () => {
     return(
         <BrowserRouter>
             <Switch>
-                <Route path="/" component={App} />
+                <Route exact path="/" component={App} />
+                <Route path="/posts" component={Posts} />
             </Switch>
         </BrowserRouter>
     )
 }
+
+export default Routes
