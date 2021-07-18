@@ -1,5 +1,11 @@
 *{
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
+  
+  &::-webkit-scrollbar{
+      display: none;
+  }
 }
 
 body {
@@ -30,5 +36,24 @@ code {
   transform: translate(-50%,-50%);
 }
 
-@import "./App.scss";
-@import "./albums.scss";
+@mixin input-field {
+  @include flexed();
+  padding-left: 1em;
+  border-radius: 1em;
+  input{
+    flex: 1;
+    font-size: 1em;
+    color: #333;
+    padding: .7em 1em;
+    font-weight: 700;
+    outline: none;
+    border: none;
+    background: transparent;
+  }
+}
+
+@import "./scss/App.scss";
+@import "./scss/albums.scss";
+@import "./scss/musicPlayer.scss";
+@import "./scss/audio-card.scss";
+@import "./scss/player.scss";

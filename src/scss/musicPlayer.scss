@@ -1,0 +1,118 @@
+$baseBg:white;//#1a1a1a;
+$secondaryBg:whitesmoke;//#2a2a2a;
+$primary:rgba(29, 78, 216,1);
+$mainText:#111;//whitesmoke;
+$darkText:#555;
+$mutedText:#777;
+$lightText:#999;
+
+.music-container{
+    background: $baseBg;
+    min-height: 100vh;
+    max-height: 100vh;
+    overflow: hidden;
+    display: flex;
+    .sidenav{
+        flex: .1;
+        @include flexed();
+        flex-direction: column;
+        padding-top: 1em;
+        .brand{
+            cursor: pointer;
+            color:$primary
+        }
+        .links{
+            flex: .5;
+            @include flexed();
+            flex-direction: column;
+            justify-content: flex-start;
+            a{
+                text-decoration: none;
+            
+                .link{
+                    color: $mutedText;
+                    transition: all .5s;
+                    &:hover{
+                        color: $primary;
+                    }
+                }
+                &:nth-child(2){
+                    margin: 1.5em 0;
+                }
+            }
+            .active{
+                .link{
+                    color: $primary;
+                }
+            }
+        }
+        p{
+            color: $mutedText;
+            font-weight: 400;
+        }
+    }
+    .parent{
+        background: $secondaryBg;
+        flex: 1;
+        padding: 0 1em;
+        display: flex;
+        flex-direction: column;
+        overflow-y: scroll;
+        position: relative;
+        .header{
+            width: 100%;
+            padding: 1em 0;
+            @include flexed();
+            justify-content: flex-start;
+            .navs{
+                .nav{
+                    color: $mutedText;
+                    cursor: pointer;
+                    &:first-child{
+                        color:$primary;
+                        margin-right: .5em;
+                    }
+                    &:hover{
+                        color: $darkText;
+                    }
+                }
+            }
+            .search-input{
+                @include input-field();
+                flex: .4;
+                margin-left: 3%;
+                border: 2px solid $mutedText;
+                .icon{
+                    color: $darkText;
+                }
+                input{
+                    &::-webkit-input-placeholder{
+                        color: $darkText;
+                    }
+                }
+            }
+        }
+        h1{
+            font-weight: 900;
+            color: $mutedText;
+            margin-left: .3em;
+        }
+    }
+}
+
+.no-internet{
+    @include centered();
+    text-align: center;
+    filter: drop-shadow(0px 0px 5px black);
+    p{
+        font-size: 1em;
+        font-weight: 400;
+        color: $mainText;
+        text-transform: capitalize;
+    }
+    .btn{
+        cursor: pointer;
+        margin: 2em 0 -2em 0;
+        color: $primary;
+    }
+}
